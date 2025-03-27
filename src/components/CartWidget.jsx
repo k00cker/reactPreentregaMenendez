@@ -1,13 +1,11 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import "../style.css";
+import { Badge } from "antd";
 
 const CartWidget = () => {
   return (
-    <div className="cart-widget">
-      <ShoppingCartOutlined className="cart-icon" />
-      <span className="cart-count">3</span>{" "}
-      {/* Hardcodeado como indica la consigna */}
-    </div>
+    <Badge count={3} showZero>
+      <ShoppingCartOutlined style={{ fontSize: "24px", color: "white" }} />
+    </Badge>
   );
 };
 
