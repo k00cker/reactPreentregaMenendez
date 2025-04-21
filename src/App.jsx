@@ -1,14 +1,16 @@
 import React from "react";
 import NavBar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
-import { Layout } from "antd";
+import ItemListContainer from "../src/components/ItemListContainer";
+import "primereact/resources/themes/lara-light-blue/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
 
 const App = () => {
   return (
-    <Layout>
+    <div>
       <NavBar />
-      <ItemListContainer greeting="¡Bienvenido a RetroArcade!" />
-    </Layout>
+      <ItemListContainer />
+    </div>
   );
 };
 

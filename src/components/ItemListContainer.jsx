@@ -1,13 +1,18 @@
 import React from "react";
-import { Card, Typography } from "antd";
+import ItemList from "../components/ItemList";
 
-const { Title } = Typography;
+const ItemListContainer = () => {
+  const products = [
+    { id: 1, name: "Producto 1", price: 100 },
+    { id: 2, name: "Producto 2", price: 200 },
+    { id: 3, name: "Producto 3", price: 300 },
+  ];
 
-const ItemListContainer = ({ greeting }) => {
   return (
-    <Card style={{ margin: "20px", textAlign: "center" }}>
-      <Title level={3}>{greeting}</Title>
-    </Card>
+    <div>
+      <p>Logica de Producto</p>
+      <ItemList products={products} />
+    </div>
   );
 };
 
