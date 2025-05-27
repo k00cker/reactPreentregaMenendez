@@ -1,28 +1,35 @@
-import React from "react";
-import { Card } from "primereact/card";
-import { Button } from "primereact/button";
+import { Link } from "react-router-dom";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import CardActions from "@mui/material/CardActions";
 
-function Item() {
-  const header = <img alt="Imagne" src="https://via.placeholder.com/400x200" />;
-  const footer = <span>Este es el pie de la card</span>;
-
+const Item = ({ item }) => {
   return (
-    <Card
-      title="Prueba 1"
-      subTitle="Card de prueba"
-      footer={footer}
-      header={header}
-      className="md:w-25rem"
-    >
-      <p className="m-0">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
-        consequuntur error repudiandae numquam deserunt quisquam repellat libero
-        asperiores earum nam nobis, culpa ratione quam perferendis esse,
-        cupiditate neque quas!
-      </p>
-      <Button label="Detalles" severity="secondary" raised />
+    <Card>
+      <CardMedia
+        component="img"
+        height="140"
+        image={item.image}
+        alt={item.title}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h6">
+          {item.title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          ${item.price}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small" component={Link} to={`/item/${item.id}`}>
+          Ver Detalle
+        </Button>
+      </CardActions>
     </Card>
   );
-}
+};
 
 export default Item;

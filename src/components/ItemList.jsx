@@ -1,15 +1,15 @@
-import React from "react";
-import Item from "../components/Item";
-import ItemDetails from "./ItemDetails";
+import Grid from "@mui/material/Grid";
+import Item from "./Item";
 
-const ItemList = ({ products }) => {
-  console.log(products);
+const ItemList = ({ items }) => {
   return (
-    <div>
-      <p>ItemList</p>
-      <Item />
-      <ItemDetails />
-    </div>
+    <Grid container spacing={4}>
+      {items.map((item) => (
+        <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}>
+          <Item item={item} />
+        </Grid>
+      ))}
+    </Grid>
   );
 };
 

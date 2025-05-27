@@ -1,11 +1,19 @@
-import { ShoppingCartOutlined } from "@ant-design/icons";
-import { Badge } from "antd";
+import { useContext } from "react";
+import { CartContext } from "../contexts/CartContext";
+import { Link } from "react-router-dom";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Badge from "@mui/material/Badge";
+import IconButton from "@mui/material/IconButton";
 
 const CartWidget = () => {
+  const { totalItems } = useContext(CartContext);
+
   return (
-    <Badge count={3} showZero>
-      <ShoppingCartOutlined style={{ fontSize: "24px", color: "white" }} />
-    </Badge>
+    <IconButton component={Link} to="/cart" color="inherit">
+      <Badge badgeContent={totalItems} color="secondary">
+        <ShoppingCartIcon />
+      </Badge>
+    </IconButton>
   );
 };
 
